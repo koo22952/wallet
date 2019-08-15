@@ -1,0 +1,26 @@
+@import './reset.scss';
+@import './mixin.scss';
+@import './variable.scss';
+
+// 載入字型
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Roboto', 'Microsoft JhengHei', sans-serif;
+  user-select: none;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+  font-size: 16px;
+  background: #ffff;
+}
