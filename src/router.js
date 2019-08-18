@@ -4,14 +4,39 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  mode: 'hash',
+  // base: process.env.BASE_URL,
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home
-    // },
+    {
+      path: '/',
+      name: 'home',
+      component: () => import('./views/Home.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'step1',
+          component: () => import('./components/Step1.vue')
+        },
+        {
+          path: '/credit-card',
+          name: 'credit-card',
+          props: true,
+          component: () => import('./components/credit-card.vue')
+        },
+        {
+          path: '/web-shop',
+          name: 'web-shop',
+          props: true,
+          component: () => import('./components/web-shop.vue')
+        },
+        {
+          path: '/finish',
+          name: 'finish',
+          component: () => import('./components/finish.vue')
+        }
+      ]
+    }
+
     // {
     //   path: '/about',
     //   name: 'about',
